@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doc-proofreader-cli"
+version = "0.1.0"
+description = "DocProof: proofread manuscripts without touching a byte of the original; suggestions land only in annotated patch files."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["proofreading", "manuscript", "writing", "local-llm", "ollama", "diff"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = []
+
+[project.scripts]
+docproof = "docproof.cli:main"
+
+[tool.setuptools]
+packages = ["docproof"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
